@@ -60,7 +60,7 @@ class OnboardingPage extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: defaultMargin),
                   child: RaisedButton(
                     onPressed: () {
-                      // Get.to(MainPage());
+                      Get.to(SignPage());
                     },
                     elevation: 0,
                     shape: RoundedRectangleBorder(
