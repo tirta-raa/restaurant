@@ -90,7 +90,7 @@ class _SignInPageState extends State<SignInPage> {
         padding: EdgeInsets.symmetric(horizontal: defaultMargin),
         child: RaisedButton(
           onPressed: () {
-            // Get.to(SignPage());
+            Get.to(MainPage());
           },
           elevation: 0,
           shape: RoundedRectangleBorder(
