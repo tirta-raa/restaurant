@@ -11,17 +11,17 @@ class _SignInPageState extends State<SignInPage> {
     TextEditingController emailController = TextEditingController();
     TextEditingController passwordController = TextEditingController();
 
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: 50),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+    Widget inputEmail() {
+      return Column(
         children: [
           Container(
             width: double.infinity,
             margin: EdgeInsets.fromLTRB(0, 46, defaultMargin, 9),
             child: Text(
               'Email Adress',
-              style: blackFontStyle3.copyWith(fontSize: 15, color: greyColor),
+              style: blackFontStyle3.copyWith(
+                fontSize: 15,
+              ),
             ),
           ),
           Container(
@@ -37,12 +37,21 @@ class _SignInPageState extends State<SignInPage> {
           Divider(
             thickness: 1,
           ),
+        ],
+      );
+    }
+
+    Widget inputPassword() {
+      return Column(
+        children: [
           Container(
             width: double.infinity,
             margin: EdgeInsets.fromLTRB(0, 46, defaultMargin, 9),
             child: Text(
               'Password',
-              style: blackFontStyle3.copyWith(fontSize: 15, color: greyColor),
+              style: blackFontStyle3.copyWith(
+                fontSize: 15,
+              ),
             ),
           ),
           Container(
@@ -59,6 +68,52 @@ class _SignInPageState extends State<SignInPage> {
           Divider(
             thickness: 1,
           ),
+        ],
+      );
+    }
+
+    Widget buttonForgotPassword() {
+      return TextButton(
+        onPressed: () {},
+        child: Text(
+          'Forgot Password ?',
+          style: blackFontStyle3.copyWith(color: mainColor),
+        ),
+      );
+    }
+
+    Widget buttonSignIn() {
+      return Container(
+        margin: EdgeInsets.only(top: 50),
+        width: double.infinity,
+        height: 70,
+        padding: EdgeInsets.symmetric(horizontal: defaultMargin),
+        child: RaisedButton(
+          onPressed: () {
+            // Get.to(SignPage());
+          },
+          elevation: 0,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30),
+          ),
+          color: mainColor,
+          child: Text(
+            'Sign In',
+            style: blackFontStyle3.copyWith(color: Colors.white),
+          ),
+        ),
+      );
+    }
+
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 50),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          inputEmail(),
+          inputPassword(),
+          buttonForgotPassword(),
+          buttonSignIn(),
         ],
       ),
     );

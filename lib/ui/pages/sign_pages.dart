@@ -17,6 +17,7 @@ class _SignPageState extends State<SignPage> {
       body: Container(
         color: Colors.white,
         child: SafeArea(
+          bottom: false,
           child: Container(
             color: bgColor,
             child: ListView(
@@ -48,7 +49,7 @@ class _SignPageState extends State<SignPage> {
                         ),
                       ),
                       CustomTabBar(
-                        titles: ['Login', 'Sign Up'],
+                        titles: ['Sign - In', 'Sign - Up'],
                         selectedIndex: selectedIndex,
                         onTap: (index) {
                           setState(() {
