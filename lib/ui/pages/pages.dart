@@ -2,8 +2,10 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:restaurant/shared/shared.dart';
 import 'package:restaurant/ui/widgets/widgets.dart';
+import 'package:supercharged/supercharged.dart';
 
 part 'splash_page.dart';
 part 'sign_pages.dart';

@@ -52,7 +52,7 @@ class _SignPageState extends State<SignPage> {
         child: SafeArea(
           bottom: false,
           child: Container(
-            color: bgColor,
+            color: 'FAFAFC'.toColor(),
             child: ListView(
               children: [
                 // * White Bg *
