@@ -9,7 +9,7 @@ class _SplashScreen extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     Timer(Duration(seconds: 3), () {
-      Get.to(SignInPage());
+      Get.to(OnboardingPage());
     });
 
     return Scaffold(
@@ -22,17 +22,18 @@ class _SplashScreen extends State<SplashScreen> {
             fit: BoxFit.fill,
           ),
           Center(
-              child: Container(
-            width: 321,
-            height: 321,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              image: DecorationImage(
-                image: AssetImage('assets/logo.png'),
-                fit: BoxFit.cover,
+            child: Container(
+              width: 321,
+              height: 321,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  image: AssetImage('assets/logo.png'),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
-          )),
+          ),
         ],
       ),
     );

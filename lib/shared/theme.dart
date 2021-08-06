@@ -12,4 +12,7 @@ TextStyle blackFontStyle2 = GoogleFonts.poppins()
 TextStyle blackFontStyle3 = GoogleFonts.poppins()
     .copyWith(color: Colors.black, fontWeight: FontWeight.w600);
 
+TextStyle whiteFontStyle = GoogleFonts.poppins()
+    .copyWith(color: Colors.white, fontSize: 65, fontWeight: FontWeight.w900);
+
 const double defaultMargin = 50;

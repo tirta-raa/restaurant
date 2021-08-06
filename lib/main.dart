@@ -15,7 +15,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      home: SplashScreen(),
+      debugShowCheckedModeBanner: false,
+      home: OnboardingPage(),
     );
   }
 }
