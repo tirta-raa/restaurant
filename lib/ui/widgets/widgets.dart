@@ -7,3 +7,4 @@ part 'custom_tabbar.dart';
 part 'rating_stars.dart';
 part 'custom_bottom_navbar.dart';
 part 'restaurant_card.dart';
+part 'restaurant_list.dart';
