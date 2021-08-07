@@ -48,7 +48,19 @@ class RestaurantCard extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(bottom: 12, left: 12),
-            child: Text(restaurant.location),
+            child: Row(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(right: 8),
+                  width: 15,
+                  height: 15,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(image: AssetImage('assets/pin.png')),
+                  ),
+                ),
+                Text(restaurant.location),
+              ],
+            ),
           ),
           Padding(
             padding: EdgeInsets.only(left: 12),
