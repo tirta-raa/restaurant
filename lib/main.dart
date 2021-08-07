@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:restaurant/models/models.dart';
 import 'package:restaurant/ui/pages/pages.dart';
 
 void main() {
@@ -16,7 +17,9 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MainPage(),
+      home: RestaurantDetailPage(
+        transaction: TrasnsactionModels(restaurant: mockRestaurant[0]),
+      ),
     );
   }
 }
