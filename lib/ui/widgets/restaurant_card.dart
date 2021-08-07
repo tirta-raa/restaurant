@@ -10,6 +10,8 @@ class RestaurantCard extends StatelessWidget {
       width: 200,
       height: 200,
       decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(8),
         boxShadow: [
           BoxShadow(
             spreadRadius: 3,
@@ -19,6 +21,7 @@ class RestaurantCard extends StatelessWidget {
         ],
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
             height: 140,
@@ -29,7 +32,7 @@ class RestaurantCard extends StatelessWidget {
               ),
               image: DecorationImage(
                 image: NetworkImage(restaurant.picturePath),
-                fit: BoxFit.cover,
+                fit: BoxFit.contain,
               ),
             ),
           ),
@@ -38,7 +41,14 @@ class RestaurantCard extends StatelessWidget {
             width: 200,
             child: Text(
               restaurant.name,
+              style: blackFontStyle3.copyWith(fontSize: 20),
+              maxLines: 1,
+              overflow: TextOverflow.clip,
             ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(bottom: 12, left: 12),
+            child: Text(restaurant.location),
           ),
           Padding(
             padding: EdgeInsets.only(left: 12),

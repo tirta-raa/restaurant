@@ -23,9 +23,16 @@ class _RestaurantPageState extends State<RestaurantPage> {
             width: double.infinity,
             child: ListView(
               scrollDirection: Axis.horizontal,
-              children: [
-                RestaurantCard(mockRestaurant),
-              ],
+              children: mockRestaurant
+                  .map(
+                    (e) => Padding(
+                      padding: EdgeInsets.only(
+                          left: (e == mockRestaurant.first) ? defaultMargin : 0,
+                          right: defaultMargin),
+                      child: RestaurantCard(e),
+                    ),
+                  )
+                  .toList(),
             ),
           ),
         ],
