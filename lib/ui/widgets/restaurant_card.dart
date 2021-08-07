@@ -7,6 +7,7 @@ class RestaurantCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.only(bottom: 15),
       width: 200,
       height: 200,
       decoration: BoxDecoration(

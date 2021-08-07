@@ -14,6 +14,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
 
     Widget restaurantCard() {
       return Container(
+        margin: EdgeInsets.only(bottom: 10),
         height: 258,
         width: double.infinity,
         child: ListView(
@@ -32,6 +33,58 @@ class _RestaurantPageState extends State<RestaurantPage> {
       );
     }
 
+    Widget tabBar() {
+      return Container(
+        width: double.infinity,
+        color: Colors.white,
+        child: Column(
+          children: [
+            CustomTabBar(
+                titles: [
+                  'Terfavorit',
+                  'Paling Dekat',
+                ],
+                selectedIndex: selectedIndex,
+                onTap: (index) {
+                  setState(() {
+                    selectedIndex = index;
+                  });
+                }),
+            SizedBox(
+              height: 16,
+            ),
+            Builder(
+              builder: (_) {
+                List<RestaurantModels> restaurant = (selectedIndex == 0)
+                    ? mockRestaurant
+                    : (selectedIndex == 1)
+                        ? []
+                        : [];
+
+                return Column(
+                  children: restaurant
+                      .map(
+                        (e) => Padding(
+                          padding: EdgeInsets.fromLTRB(
+                              defaultMargin, 0, defaultMargin, 16),
+                          child: RestaurantListItem(
+                            restaurant: e,
+                            itemWidht: listItemWidth,
+                          ),
+                        ),
+                      )
+                      .toList(),
+                );
+              },
+            ),
+            SizedBox(
+              height: 80,
+            ),
+          ],
+        ),
+      );
+    }
+
     return GeneralPage(
       title: 'Restaurants',
       subtitle: 'Yuk cari restaurant',
@@ -40,6 +93,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
       child: Column(
         children: [
           restaurantCard(),
+          tabBar(),
         ],
       ),
     );

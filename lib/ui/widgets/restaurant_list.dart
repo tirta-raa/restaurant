@@ -35,13 +35,19 @@ class RestaurantListItem extends StatelessWidget {
                 maxLines: 1,
                 overflow: TextOverflow.clip,
               ),
-              Container(
-                margin: EdgeInsets.only(right: 8),
-                width: 15,
-                height: 15,
-                decoration: BoxDecoration(
-                  image: DecorationImage(image: AssetImage('assets/pin.png')),
-                ),
+              Row(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(right: 8),
+                    width: 15,
+                    height: 15,
+                    decoration: BoxDecoration(
+                      image:
+                          DecorationImage(image: AssetImage('assets/pin.png')),
+                    ),
+                  ),
+                  Text(restaurant.location),
+                ],
               ),
             ],
           ),
