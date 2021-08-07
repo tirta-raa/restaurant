@@ -7,6 +7,7 @@ class RestaurantPage extends StatefulWidget {
 
 class _RestaurantPageState extends State<RestaurantPage> {
   int selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     double listItemWidth =
@@ -55,11 +56,8 @@ class _RestaurantPageState extends State<RestaurantPage> {
             ),
             Builder(
               builder: (_) {
-                List<RestaurantModels> restaurant = (selectedIndex == 0)
-                    ? mockRestaurant
-                    : (selectedIndex == 1)
-                        ? []
-                        : [];
+                List<RestaurantModels> restaurant =
+                    (selectedIndex == 0) ? mockRestaurant : [];
 
                 return Column(
                   children: restaurant
