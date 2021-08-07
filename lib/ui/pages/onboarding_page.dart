@@ -18,11 +18,11 @@ class OnboardingPage extends StatelessWidget {
       );
     }
 
-    Widget textFoodForEveryone() {
+    Widget textTitle() {
       return Container(
         margin: EdgeInsets.only(top: 160, left: defaultMargin),
         child: Text(
-          'Food for Everyone',
+          'Restaurant Everyone',
           style: whiteFontStyle,
         ),
       );
@@ -84,7 +84,7 @@ class OnboardingPage extends StatelessWidget {
             Stack(
               children: [
                 logo(),
-                textFoodForEveryone(),
+                textTitle(),
                 imagePerson(),
                 buttonGetStarted(),
               ],

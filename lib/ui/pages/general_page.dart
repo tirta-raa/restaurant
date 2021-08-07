@@ -3,6 +3,7 @@ part of 'pages.dart';
 class GeneralPage extends StatelessWidget {
   final String title;
   final String subtitle;
+  final String picturePath;
   final Function onBackButtonPressed;
   final Widget child;
   final Color backColor;
@@ -10,6 +11,7 @@ class GeneralPage extends StatelessWidget {
   GeneralPage(
       {this.title = 'Tittle',
       this.subtitle = 'subtittle',
+      this.picturePath,
       this.onBackButtonPressed,
       this.child,
       this.backColor});
@@ -79,6 +81,30 @@ class GeneralPage extends StatelessWidget {
                               ),
                             ],
                           ),
+                          Spacer(),
+                          (picturePath != null)
+                              ? Container(
+                                  width: 50,
+                                  height: 50,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    image: DecorationImage(
+                                      image: NetworkImage(picturePath),
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                )
+                              : Container(
+                                  width: 50,
+                                  height: 50,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    image: DecorationImage(
+                                      image: NetworkImage(picturePath),
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
                         ],
                       ),
                     ),
