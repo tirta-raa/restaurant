@@ -10,6 +10,55 @@ class _MainPageState extends State<MainPage> {
   PageController pageController = PageController(initialPage: 0);
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: Stack(
+        children: [
+          Container(
+            color: Colors.white,
+          ),
+          SafeArea(
+            child: Container(
+              color: 'FAFAFC'.toColor(),
+            ),
+          ),
+          SafeArea(
+            child: PageView(
+              controller: pageController,
+              onPageChanged: (index) {
+                setState(() {
+                  selectedPage = index;
+                });
+              },
+              children: [
+                Center(
+                  child: IlustrationFavoritPage(),
+                ),
+                Center(
+                  child: IlustrationOrderEmpetyPage(),
+                ),
+                Center(
+                  child: IlustrationFavoritPage(),
+                ),
+                Center(
+                  child: IlustrationOrderEmpetyPage(),
+                ),
+              ],
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: CustomBottomNavBar(
+              selectedIndex: selectedPage,
+              onTap: (index) {
+                setState(() {
+                  selectedPage = index;
+                });
+                pageController.jumpToPage(selectedPage);
+              },
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

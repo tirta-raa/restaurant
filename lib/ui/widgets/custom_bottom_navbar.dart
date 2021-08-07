@@ -21,7 +21,7 @@ class CustomBottomNavBar extends StatelessWidget {
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage(
-                'assets/home' + ((selectedIndex == 0) ? '1.png' : 'png'),
+                'assets/home' + ((selectedIndex == 0) ? '1.png' : '.png'),
               ),
               fit: BoxFit.contain,
             ),
@@ -43,7 +43,7 @@ class CustomBottomNavBar extends StatelessWidget {
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage(
-                'assets/heart' + ((selectedIndex == 1) ? '1.png' : 'png'),
+                'assets/heart' + ((selectedIndex == 1) ? '1.png' : '.png'),
               ),
               fit: BoxFit.contain,
             ),
@@ -65,7 +65,7 @@ class CustomBottomNavBar extends StatelessWidget {
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage(
-                'assets/history' + ((selectedIndex == 2) ? '1.png' : 'png'),
+                'assets/history' + ((selectedIndex == 2) ? '1.png' : '.png'),
               ),
               fit: BoxFit.contain,
             ),
@@ -87,7 +87,7 @@ class CustomBottomNavBar extends StatelessWidget {
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage(
-                'assets/user' + ((selectedIndex == 3) ? '1.png' : 'png'),
+                'assets/user' + ((selectedIndex == 3) ? '1.png' : '.png'),
               ),
               fit: BoxFit.contain,
             ),
@@ -101,7 +101,7 @@ class CustomBottomNavBar extends StatelessWidget {
       width: double.infinity,
       color: Colors.white,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           homeButton(),
           favoritButton(),

@@ -1,6 +1,6 @@
 part of 'models.dart';
 
-class FoodModels {
+class RestaurantModels {
   final int id;
   final String picturePath;
   final String name;
@@ -8,7 +8,7 @@ class FoodModels {
   final String location;
   final double rate;
 
-  FoodModels(
+  RestaurantModels(
       {this.id,
       this.picturePath,
       this.name,
@@ -16,8 +16,8 @@ class FoodModels {
       this.location,
       this.rate});
 
-  List<FoodModels> mockRestaurant = [
-    FoodModels(
+  List<RestaurantModels> mockRestaurant = [
+    RestaurantModels(
       id: 1,
       picturePath: 'https://pngimg.com/uploads/kfc/kfc_PNG24.png',
       name: 'KFC',
@@ -26,7 +26,7 @@ class FoodModels {
       location: 'Bogor',
       rate: 4.4,
     ),
-    FoodModels(
+    RestaurantModels(
       id: 2,
       picturePath:
           'https://seeklogo.com/images/C/cfc-logo-79608E5914-seeklogo.com.png',
@@ -36,7 +36,7 @@ class FoodModels {
       location: 'Bandung',
       rate: 3.4,
     ),
-    FoodModels(
+    RestaurantModels(
       id: 3,
       picturePath:
           'https://seeklogo.com/images/T/texas-fried-chicken-logo-E84F9401A8-seeklogo.com.png',
@@ -46,7 +46,7 @@ class FoodModels {
       location: 'Jakarta',
       rate: 1.9,
     ),
-    FoodModels(
+    RestaurantModels(
       id: 4,
       picturePath:
           'https://seeklogo.com/images/B/burger-king-new-2021-logo-F43BDE45C7-seeklogo.com.png',
@@ -56,7 +56,7 @@ class FoodModels {
       location: 'Bogor',
       rate: 5,
     ),
-    FoodModels(
+    RestaurantModels(
       id: 5,
       picturePath:
           'https://seeklogo.com/images/M/mcdonald-s-logo-0D95A820B2-seeklogo.com.png',
@@ -66,7 +66,7 @@ class FoodModels {
       location: 'Sumedang',
       rate: 4.4,
     ),
-    FoodModels(
+    RestaurantModels(
       id: 6,
       picturePath:
           'https://seeklogo.com/images/S/Starbucks_Coffee-logo-DECE0A6E4B-seeklogo.com.png',
@@ -76,7 +76,7 @@ class FoodModels {
       location: 'Sukabumi',
       rate: 5,
     ),
-    FoodModels(
+    RestaurantModels(
       id: 7,
       picturePath:
           'https://seeklogo.com/images/D/dominos-pizza-logo-3C4574E20F-seeklogo.com.png',
@@ -86,7 +86,7 @@ class FoodModels {
       location: 'Balik Papan',
       rate: 2.2,
     ),
-    FoodModels(
+    RestaurantModels(
       id: 8,
       picturePath:
           'https://seeklogo.com/images/P/Pizza_Hut-logo-FDF59C73F0-seeklogo.com.png',
@@ -96,7 +96,7 @@ class FoodModels {
       location: 'Jogja',
       rate: 3.9,
     ),
-    FoodModels(
+    RestaurantModels(
       id: 9,
       picturePath:
           'https://seeklogo.com/images/D/Dunkin_donuts-logo-6828720377-seeklogo.com.png',
