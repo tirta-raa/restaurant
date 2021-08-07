@@ -6,7 +6,7 @@ class IlustrationFavoritPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: IlustrationPage(
-        title: 'Hemm Beulum Ada Favorit',
+        title: 'Hemm Belum Ada Favorit',
         subtitle: 'Ayo kita cari makan favorit \n untuk kita nikmati',
         picturePath: 'assets/favorit.png',
         buttonTitle1: 'Cari Makanan',
