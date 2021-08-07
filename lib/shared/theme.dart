@@ -17,4 +17,4 @@ TextStyle greyFontStyle = GoogleFonts.poppins().copyWith(color: greyColor);
 TextStyle whiteFontStyle = GoogleFonts.poppins()
     .copyWith(color: Colors.white, fontSize: 65, fontWeight: FontWeight.w900);
 
-const double defaultMargin = 50;
+const double defaultMargin = 24;
