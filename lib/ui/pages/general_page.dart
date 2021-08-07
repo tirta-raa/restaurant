@@ -94,17 +94,7 @@ class GeneralPage extends StatelessWidget {
                                     ),
                                   ),
                                 )
-                              : Container(
-                                  width: 50,
-                                  height: 50,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    image: DecorationImage(
-                                      image: NetworkImage(picturePath),
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                ),
+                              : SizedBox(),
                         ],
                       ),
                     ),
