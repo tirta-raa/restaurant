@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:restaurant/shared/shared.dart';
 import 'package:restaurant/ui/widgets/widgets.dart';
 import 'package:supercharged/supercharged.dart';
+import 'package:restaurant/models/models.dart';
 
 part 'splash_page.dart';
 part 'sign_pages.dart';
