@@ -53,23 +53,31 @@ class OnboardingPage extends StatelessWidget {
     }
 
     Widget buttonGetStarted() {
-      return Container(
-        width: 314,
-        height: 70,
-        margin: EdgeInsets.fromLTRB(defaultMargin, 830, defaultMargin, 36),
-        padding: EdgeInsets.symmetric(horizontal: defaultMargin),
-        child: RaisedButton(
-          onPressed: () {
-            Get.to(SignPage());
-          },
-          elevation: 0,
-          shape: RoundedRectangleBorder(
+      return Align(
+        alignment: Alignment.center,
+        child: Container(
+          margin: EdgeInsets.fromLTRB(defaultMargin, 830, defaultMargin, 36),
+          padding: EdgeInsets.symmetric(horizontal: defaultMargin),
+          width: 314,
+          height: 70,
+          decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30),
           ),
-          color: Colors.white,
-          child: Text(
-            'Get Started',
-            style: blackFontStyle3.copyWith(color: mainColor),
+          child: ElevatedButton(
+            onPressed: () {
+              Get.to(SignPage());
+            },
+            style: ElevatedButton.styleFrom(
+              primary: Colors.white,
+              elevation: 0,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+            ),
+            child: Text(
+              'Get Started',
+              style: blackFontStyle3.copyWith(color: mainColor),
+            ),
           ),
         ),
       );

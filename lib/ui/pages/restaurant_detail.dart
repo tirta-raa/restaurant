@@ -36,7 +36,7 @@ class _RestaurantDetailPageState extends State<RestaurantDetailPage> {
           decoration: BoxDecoration(
             image: DecorationImage(
               image: NetworkImage(widget.restaurant.picturePath),
-              fit: BoxFit.cover,
+              fit: BoxFit.contain,
             ),
           ),
         ),
@@ -206,6 +206,9 @@ class _RestaurantDetailPageState extends State<RestaurantDetailPage> {
             child: ListView(
               children: [
                 whiteBackButton(),
+
+                // *  White Bg
+
                 Container(
                   margin: EdgeInsets.only(top: 180),
                   padding: EdgeInsets.symmetric(vertical: 26, horizontal: 16),

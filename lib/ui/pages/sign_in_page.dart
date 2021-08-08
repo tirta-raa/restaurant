@@ -6,11 +6,11 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    TextEditingController emailController = TextEditingController();
-    TextEditingController passwordController = TextEditingController();
-
     Widget inputEmail() {
       return Column(
         children: [
@@ -88,15 +88,17 @@ class _SignInPageState extends State<SignInPage> {
         width: double.infinity,
         height: 70,
         padding: EdgeInsets.symmetric(horizontal: defaultMargin),
-        child: RaisedButton(
+        child: ElevatedButton(
           onPressed: () {
             Get.to(MainPage());
           },
-          elevation: 0,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30),
+          style: ElevatedButton.styleFrom(
+            primary: mainColor,
+            elevation: 0,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30),
+            ),
           ),
-          color: mainColor,
           child: Text(
             'Sign In',
             style: blackFontStyle3.copyWith(color: Colors.white),

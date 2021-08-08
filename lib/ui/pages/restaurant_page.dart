@@ -26,7 +26,19 @@ class _RestaurantPageState extends State<RestaurantPage> {
                   padding: EdgeInsets.only(
                       left: (e == mockRestaurant.first) ? defaultMargin : 0,
                       right: defaultMargin),
-                  child: RestaurantCard(e),
+                  child: GestureDetector(
+                    onTap: () {
+                      Get.to(
+                        RestaurantDetailPage(
+                          restaurant: e,
+                          onBackButtonPressed: () {
+                            Get.back();
+                          },
+                        ),
+                      );
+                    },
+                    child: RestaurantCard(e),
+                  ),
                 ),
               )
               .toList(),
@@ -65,9 +77,21 @@ class _RestaurantPageState extends State<RestaurantPage> {
                         (e) => Padding(
                           padding: EdgeInsets.fromLTRB(
                               defaultMargin, 0, defaultMargin, 16),
-                          child: RestaurantListItem(
-                            restaurant: e,
-                            itemWidht: listItemWidth,
+                          child: GestureDetector(
+                            onTap: () {
+                              Get.to(
+                                RestaurantDetailPage(
+                                  restaurant: e,
+                                  onBackButtonPressed: () {
+                                    Get.back();
+                                  },
+                                ),
+                              );
+                            },
+                            child: RestaurantListItem(
+                              restaurant: e,
+                              itemWidht: listItemWidth,
+                            ),
                           ),
                         ),
                       )

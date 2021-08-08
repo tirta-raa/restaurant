@@ -6,17 +6,15 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  TextEditingController nameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController phoneNumController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController confirmPasswordController = TextEditingController();
+  TextEditingController cityController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    TextEditingController nameController = TextEditingController();
-    TextEditingController emailController = TextEditingController();
-    TextEditingController phoneNumController = TextEditingController();
-    TextEditingController passwordController = TextEditingController();
-    TextEditingController confirmPasswordController = TextEditingController();
-    TextEditingController cityController = TextEditingController();
-
-    bool isLoading = false;
-
     Widget inputName() {
       return Column(
         children: [
@@ -159,14 +157,14 @@ class _SignUpPageState extends State<SignUpPage> {
       );
     }
 
-    Widget inputCity() {
+    Widget inputAdress() {
       return Column(
         children: [
           Container(
             width: double.infinity,
             margin: EdgeInsets.fromLTRB(0, 46, defaultMargin, 9),
             child: Text(
-              'City',
+              'Adress',
               style: blackFontStyle3.copyWith(fontSize: 15),
             ),
           ),
@@ -193,15 +191,17 @@ class _SignUpPageState extends State<SignUpPage> {
         width: double.infinity,
         height: 70,
         padding: EdgeInsets.symmetric(horizontal: defaultMargin),
-        child: RaisedButton(
+        child: ElevatedButton(
           onPressed: () {
             Get.to(MainPage());
           },
-          elevation: 0,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30),
+          style: ElevatedButton.styleFrom(
+            primary: mainColor,
+            elevation: 0,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30),
+            ),
           ),
-          color: mainColor,
           child: Text(
             'Register',
             style: blackFontStyle3.copyWith(color: Colors.white),
@@ -220,7 +220,7 @@ class _SignUpPageState extends State<SignUpPage> {
           inputPhoneNum(),
           inputPassword(),
           confirmPassword(),
-          inputCity(),
+          inputAdress(),
           buttonRegister(),
         ],
       ),

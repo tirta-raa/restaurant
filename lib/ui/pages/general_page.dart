@@ -18,17 +18,89 @@ class GeneralPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Widget bgColor() {
+      return Container(
+        color: Colors.white,
+        child: SafeArea(
+          child: Container(
+            color: backColor ?? Colors.white,
+          ),
+        ),
+      );
+    }
+
+    Widget backButton() {
+      return onBackButtonPressed != null
+          ? GestureDetector(
+              onTap: () {
+                if (onBackButtonPressed != null) {
+                  onBackButtonPressed();
+                }
+              },
+              child: Container(
+                width: 24,
+                height: 24,
+                margin: EdgeInsets.only(right: defaultMargin),
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                  image: AssetImage('assets/back_arrow.png'),
+                )),
+              ),
+            )
+          : SizedBox();
+    }
+
+    Widget titleAndSubtitle() {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            title,
+            style: GoogleFonts.poppins(
+              fontSize: 22,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          Text(
+            subtitle,
+            style: GoogleFonts.poppins(
+              color: greyColor,
+              fontWeight: FontWeight.w300,
+            ),
+          ),
+        ],
+      );
+    }
+
+    Widget profilePicture() {
+      return (picturePath != null)
+          ? Container(
+              width: 50,
+              height: 50,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  image: NetworkImage(picturePath),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            )
+          : SizedBox();
+    }
+
+    Widget secondBgColor() {
+      return Container(
+        height: defaultMargin,
+        width: double.infinity,
+        color: 'FAFAFC'.toColor(),
+      );
+    }
+
     return Scaffold(
       body: Stack(
         children: [
-          Container(
-            color: Colors.white,
-            child: SafeArea(
-              child: Container(
-                color: backColor ?? Colors.white,
-              ),
-            ),
-          ),
+          bgColor(),
           SafeArea(
             child: ListView(
               children: [
@@ -41,68 +113,14 @@ class GeneralPage extends StatelessWidget {
                       color: Colors.white,
                       child: Row(
                         children: [
-                          onBackButtonPressed != null
-                              ? GestureDetector(
-                                  onTap: () {
-                                    if (onBackButtonPressed != null) {
-                                      onBackButtonPressed();
-                                    }
-                                  },
-                                  child: Container(
-                                    width: 24,
-                                    height: 24,
-                                    margin:
-                                        EdgeInsets.only(right: defaultMargin),
-                                    decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                      image:
-                                          AssetImage('assets/back_arrow.png'),
-                                    )),
-                                  ),
-                                )
-                              : SizedBox(),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                title,
-                                style: GoogleFonts.poppins(
-                                  fontSize: 22,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                              Text(
-                                subtitle,
-                                style: GoogleFonts.poppins(
-                                  color: greyColor,
-                                  fontWeight: FontWeight.w300,
-                                ),
-                              ),
-                            ],
-                          ),
+                          backButton(),
+                          titleAndSubtitle(),
                           Spacer(),
-                          (picturePath != null)
-                              ? Container(
-                                  width: 50,
-                                  height: 50,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    image: DecorationImage(
-                                      image: NetworkImage(picturePath),
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                )
-                              : SizedBox(),
+                          profilePicture(),
                         ],
                       ),
                     ),
-                    Container(
-                      height: defaultMargin,
-                      width: double.infinity,
-                      color: 'FAFAFC'.toColor(),
-                    ),
+                    secondBgColor(),
                     child ?? SizedBox(),
                   ],
                 ),
