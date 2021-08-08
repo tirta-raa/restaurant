@@ -19,7 +19,7 @@ class _ProfilePageState extends State<ProfilePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                margin: EdgeInsets.fromLTRB(defaultMargin, 138, 0, 12),
+                margin: EdgeInsets.fromLTRB(defaultMargin, 100, 0, 12),
                 child: Text(
                   'Information',
                   style: blackFontStyle3.copyWith(
@@ -81,6 +81,20 @@ class _ProfilePageState extends State<ProfilePage> {
                               style: greyFontStyle.copyWith(fontSize: 12),
                             ),
                           ],
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          margin: EdgeInsets.only(left: 30),
+                          width: 17,
+                          height: 17,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage('assets/pen.png'),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
                         ),
                       ),
                     ],

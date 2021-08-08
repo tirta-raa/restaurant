@@ -2,9 +2,9 @@ part of 'pages.dart';
 
 class RestaurantDetailPage extends StatefulWidget {
   final Function onBackButtonPressed;
-  final TrasnsactionModels transaction;
+  final RestaurantModels restaurant;
 
-  RestaurantDetailPage({this.onBackButtonPressed, this.transaction});
+  RestaurantDetailPage({this.onBackButtonPressed, this.restaurant});
 
   @override
   State<RestaurantDetailPage> createState() => _RestaurantDetailPageState();
@@ -35,7 +35,7 @@ class _RestaurantDetailPageState extends State<RestaurantDetailPage> {
           width: double.infinity,
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: NetworkImage(widget.transaction.restaurant.picturePath),
+              image: NetworkImage(widget.restaurant.picturePath),
               fit: BoxFit.cover,
             ),
           ),
@@ -85,14 +85,14 @@ class _RestaurantDetailPageState extends State<RestaurantDetailPage> {
                 // 26 widht heigh 26 = 52
                 // quantyty text 50
                 child: Text(
-                  widget.transaction.restaurant.name,
+                  widget.restaurant.name,
                   style: blackFontStyle3.copyWith(fontSize: 16),
                 ),
               ),
               SizedBox(
                 height: 6,
               ),
-              RatingStarts(widget.transaction.restaurant.rate),
+              RatingStarts(widget.restaurant.rate),
             ],
           ),
           Row(
@@ -154,7 +154,7 @@ class _RestaurantDetailPageState extends State<RestaurantDetailPage> {
           Container(
             margin: EdgeInsets.fromLTRB(0, 14, 0, 16),
             child: Text(
-              widget.transaction.restaurant.description,
+              widget.restaurant.description,
               style: greyFontStyle,
             ),
           ),
@@ -165,7 +165,7 @@ class _RestaurantDetailPageState extends State<RestaurantDetailPage> {
           Container(
             margin: EdgeInsets.fromLTRB(0, 4, 0, 41),
             child: Text(
-              widget.transaction.restaurant.location,
+              widget.restaurant.location,
               style: greyFontStyle,
             ),
           ),

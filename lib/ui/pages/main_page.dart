@@ -34,13 +34,23 @@ class _MainPageState extends State<MainPage> {
                   child: RestaurantPage(),
                 ),
                 Center(
-                  child: IlustrationOrderEmpetyPage(),
-                ),
-                Center(
                   child: IlustrationFavoritPage(),
                 ),
                 Center(
                   child: IlustrationOrderEmpetyPage(),
+                ),
+                Center(
+                  child: ProfilePage(
+                    UserModels(
+                      id: 1,
+                      name: 'Dini Adwa',
+                      email: 'abc@gmail.com',
+                      phoneNumber: '0852-0852-0852',
+                      address: 'Jalan 123 Bogor Selatan',
+                      picturePath:
+                          'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80',
+                    ),
+                  ),
                 ),
               ],
             ),
