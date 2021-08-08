@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -20,3 +21,4 @@ part 'ilustration_favorit_page.dart';
 part 'ilustration_order_empety_page.dart';
 part 'restaurant_page.dart';
 part 'restaurant_detail.dart';
+part 'profile_page.dart';
