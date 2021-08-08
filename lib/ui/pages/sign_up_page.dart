@@ -187,7 +187,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
     Widget buttonRegister() {
       return Container(
-        margin: EdgeInsets.only(top: 50),
+        margin: EdgeInsets.only(top: 50, bottom: 20),
         width: double.infinity,
         height: 70,
         padding: EdgeInsets.symmetric(horizontal: defaultMargin),

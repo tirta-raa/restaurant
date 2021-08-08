@@ -84,7 +84,7 @@ class _SignInPageState extends State<SignInPage> {
 
     Widget buttonSignIn() {
       return Container(
-        margin: EdgeInsets.only(top: 50),
+        margin: EdgeInsets.only(top: 50, bottom: 20),
         width: double.infinity,
         height: 70,
         padding: EdgeInsets.symmetric(horizontal: defaultMargin),

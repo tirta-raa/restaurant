@@ -47,38 +47,41 @@ class _SignPageState extends State<SignPage> {
     }
 
     return Scaffold(
-      body: Container(
-        color: Colors.white,
-        child: SafeArea(
-          bottom: false,
-          child: Container(
-            color: 'FAFAFC'.toColor(),
-            child: ListView(
-              children: [
-                // * White Bg *
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 382,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(30),
-                      bottomRight: Radius.circular(30),
+      body: SafeArea(
+        bottom: false,
+        child: Container(
+          color: Colors.white,
+          child: SafeArea(
+            bottom: false,
+            child: Container(
+              color: 'FAFAFC'.toColor(),
+              child: ListView(
+                children: [
+                  // * White Bg *
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 382,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(30),
+                        bottomRight: Radius.circular(30),
+                      ),
+                      color: Colors.white,
                     ),
-                    color: Colors.white,
+
+                    // * End White Bg *
+
+                    child: logoAndTabBar(),
                   ),
 
-                  // * End White Bg *
+                  // * chose Page *
+                  // ? arti kode di bawha jika di pilih signup munculkan sign up
 
-                  child: logoAndTabBar(),
-                ),
+                  (selectedIndex == 0) ? SignInPage() : SignUpPage(),
 
-                // * chose Page *
-                // ? arti kode di bawha jika di pilih signup munculkan sign up
-
-                (selectedIndex == 0) ? SignInPage() : SignUpPage(),
-
-                // * End chose Page *
-              ],
+                  // * End chose Page *
+                ],
+              ),
             ),
           ),
         ),
