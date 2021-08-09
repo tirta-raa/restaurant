@@ -9,6 +9,8 @@ class _SignInPageState extends State<SignInPage> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
+  final isLoading = false;
+
   @override
   Widget build(BuildContext context) {
     Widget inputEmail() {
@@ -88,22 +90,26 @@ class _SignInPageState extends State<SignInPage> {
         width: double.infinity,
         height: 70,
         padding: EdgeInsets.symmetric(horizontal: defaultMargin),
-        child: ElevatedButton(
-          onPressed: () {
-            Get.to(MainPage());
-          },
-          style: ElevatedButton.styleFrom(
-            primary: mainColor,
-            elevation: 0,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30),
-            ),
-          ),
-          child: Text(
-            'Sign In',
-            style: blackFontStyle3.copyWith(color: Colors.white),
-          ),
-        ),
+        child: isLoading
+            ? Center(
+                child: CircularProgressIndicator(),
+              )
+            : ElevatedButton(
+                onPressed: () {
+                  Get.to(MainPage());
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: mainColor,
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
+                child: Text(
+                  'Sign In',
+                  style: blackFontStyle3.copyWith(color: Colors.white),
+                ),
+              ),
       );
     }
 

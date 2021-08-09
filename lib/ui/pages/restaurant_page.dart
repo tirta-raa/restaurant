@@ -6,6 +6,7 @@ class RestaurantPage extends StatefulWidget {
 }
 
 class _RestaurantPageState extends State<RestaurantPage> {
+  final isLoading = false;
   int selectedIndex = 0;
 
   @override
@@ -20,28 +21,32 @@ class _RestaurantPageState extends State<RestaurantPage> {
         width: double.infinity,
         child: ListView(
           scrollDirection: Axis.horizontal,
-          children: mockRestaurant
-              .map(
-                (e) => Padding(
-                  padding: EdgeInsets.only(
-                      left: (e == mockRestaurant.first) ? defaultMargin : 0,
-                      right: defaultMargin),
-                  child: GestureDetector(
-                    onTap: () {
-                      Get.to(
-                        RestaurantDetailPage(
-                          restaurant: e,
-                          onBackButtonPressed: () {
-                            Get.back();
-                          },
-                        ),
-                      );
-                    },
-                    child: RestaurantCard(e),
-                  ),
-                ),
-              )
-              .toList(),
+          children: isLoading
+              ? Center(
+                  child: CircularProgressIndicator(),
+                )
+              : mockRestaurant
+                  .map(
+                    (e) => Padding(
+                      padding: EdgeInsets.only(
+                          left: (e == mockRestaurant.first) ? defaultMargin : 0,
+                          right: defaultMargin),
+                      child: GestureDetector(
+                        onTap: () {
+                          Get.to(
+                            RestaurantDetailPage(
+                              restaurant: e,
+                              onBackButtonPressed: () {
+                                Get.back();
+                              },
+                            ),
+                          );
+                        },
+                        child: RestaurantCard(e),
+                      ),
+                    ),
+                  )
+                  .toList(),
         ),
       );
     }
